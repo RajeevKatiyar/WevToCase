@@ -88,9 +88,13 @@
 
         <label for="subject">Subject</label>
         <input id="subject" maxlength="80" name="subject" size="20" type="text"  />
+        
 
         <label for="description">Description</label>
         <textarea name="description" required></textarea>
+
+        <input type="hidden">ContentdocumentId</label>
+        <input id="ContentdocumentId" maxlength="255" name="ContentdocumentId" size="20" type="text"  />
 
         <label for="fileInput">Upload File</label>
         <input type="file" id="fileInput" name="file" />
@@ -154,6 +158,10 @@
                     .then(response => response.json())
                     .then(data => {
                         console.log("File uploaded successfully:", data);
+                         const contentDocumentId = data.id; 
+                        console.log('contentDocumentId--------------------------',contentDocumentId);
+                        document.getElementById('ContentdocumentId').value = contentDocumentId;
+                        
                     })
                     .catch(error => console.error("Error uploading file:", error));
             };
