@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-to-Case with File Upload</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        form {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #45a049, #4CAF50);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #74ebd5, #9face6);
-        color: #333;
-        line-height: 1.6;
-    }
-    
-    form {
-        max-width: 650px;
-        margin: 40px auto;
-        padding: 30px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 15px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-    
-    label {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        color: #4a5568;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    input[type="file"] {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        font-size: 14px;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        box-sizing: border-box;
-    }
-    
-    input[type="submit"] {
-        display: block;
-        width: 100%;
-        padding: 14px;
-        background: linear-gradient(90deg, #4CAF50, #45a049);
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    input[type="submit"]:hover {
-        background: linear-gradient(90deg, #45a049, #4CAF50);
-        transform: scale(1.05);
-    }
-</style>
 
 <body>
 
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DNS000003BsRb" method="POST" enctype="multipart/form-data">
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DNS000003BsRb"
+        method="POST" enctype="multipart/form-data">
         <input type="hidden" name="orgid" value="00DNS000003BsRb">
         <input type="hidden" name="retURL" value="http://google.com">
 
@@ -91,117 +93,82 @@
         <textarea name="description" required></textarea>
 
         <label for="fileInput">Upload File</label>
-        <input type="file" id="fileInput" name="file" required />
+        <input type="file" id="fileInput" name="file" />
 
         <input type="hidden" id="external" name="external" value="1" />
 
         <input type="submit" name="submit" value="Submit Case">
     </form>
 
-</body>
+    <script>
+        const tokenUrl = "https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/oauth2/token";
+        const clientId = "3MVG9VMBZCsTL9hkhg.jbfAPRpI7kiQgqkggzLhc6Vuz3Bfbl0quL9F_afeRig.xWTf9o3jGtf1i9xj0WvSHJ";
+        const clientSecret = "FF03DE3DC8900436BE8606EFFCFE8514292918E262560C9CF4B529407F144D17";
+        const username = "rajeev@cloudsciencelabs.com";
+        const password = "Agra@1234";
+        const securityToken = "eyxLEKqpiJ0ARASz1B5wpAoM";
 
-<script>
-    const tokenUrl = "https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/oauth2/token";
+        function getAccessToken() {
+            console.log("Fetching Salesforce OAuth token...");
+            const data = {
+                grant_type: 'password',
+                client_id: clientId,
+                client_secret: clientSecret,
+                username: username,
+                password: password + securityToken
+            };
 
-    const clientId = "3MVG9VMBZCsTL9hkhg.jbfAPRpI7kiQgqkggzLhc6Vuz3Bfbl0quL9F_afeRig.xWTf9o3jGtf1i9xj0WvSHJ";
-    const clientSecret = "FF03DE3DC8900436BE8606EFFCFE8514292918E262560C9CF4B529407F144D17";
-    const username = "rajeev@cloudsciencelabs.com";
-    const password = "Agra@1234";
-    const securityToken = "eyxLEKqpiJ0ARASz1B5wpAoM";
-
-    function getAccessToken() {
-        console.log("Fetching Salesforce OAuth token...");
-
-        const data = {
-            grant_type: 'password',
-            client_id: clientId,
-            client_secret: clientSecret,
-            username: username,
-            password: password + securityToken
-        };
-
-        return fetch(tokenUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("OAuth Token Received:", data);
-            return data.access_token;
-        })
-        .catch(error => console.error("Error fetching access token:", error));
-    }
-
-    function uploadFileToSalesforce(file) {
-        getAccessToken().then(accessToken => {
-        
-            // const uploadUrl = 'https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/data/v54.0/sobjects/Account/';
-            // const requestData = {
-            //     Name: 'New Account Name',  // Replace with the actual account name
-            //     Type: 'Customer',          // Optional field, depending on your use case
-            //     Industry: 'Technology',    // Optional field, depending on your use case
-            // };
-                        
-            // // Perform the request using fetch
-            // fetch(uploadUrl, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Authorization': `Bearer ${accessToken}`,
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(requestData)
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log('Account created:', data);
-            // })
-            // .catch(error => {
-            //     console.error('Error creating account:', error);
-            // });
-
-            
-            const fileReader = new FileReader();
-           fileReader.onload = function(event) {
-               const fileData = event.target.result.split(',')[1];
-
-               const uploadUrl = 'https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/data/v54.0/sobjects/ContentVersion/';
-               const requestData = {
-                   Title: file.name,
-                   PathOnClient: file.name,
-                   VersionData: fileData
-               };
-
-               console.log("Uploading file to Salesforce =?> ", requestData);
-
-               fetch(uploadUrl, {
-                   method: 'POST',
-                   headers: {
-                       'Authorization': 'Bearer ' + accessToken,
-                       'Content-Type': 'application/json'
-                   },
-                   body: JSON.stringify(requestData)
-               })
-               .then(response => response.json())
-               .then(data => {
-                   console.log("File uploaded successfully:", data);
-               })
-               .catch(error => console.error("Error uploading file:", error));
-           };
-
-            fileReader.readAsDataURL(file);
-
-            
-        });
-    }
-
-    document.getElementById('fileInput').addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            console.log("File selected:", file.name);
-            uploadFileToSalesforce(file);
+            return fetch(tokenUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("OAuth Token Received:", data);
+                    return data.access_token;
+                })
+                .catch(error => console.error("Error fetching access token:", error));
         }
-    });
 
-</script>
+        function uploadFileToSalesforce(file, accessToken) {
+            const fileReader = new FileReader();
+            fileReader.onload = function (event) {
+                const fileData = event.target.result.split(',')[1];
+
+                const uploadUrl = 'https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/data/v54.0/sobjects/ContentVersion/';
+                const requestData = {
+                    Title: file.name,
+                    PathOnClient: file.name,
+                    VersionData: fileData
+                };
+
+                fetch(uploadUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + accessToken,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("File uploaded successfully:", data);
+                    })
+                    .catch(error => console.error("Error uploading file:", error));
+            };
+            fileReader.readAsDataURL(file);
+        }
+
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                console.log("File selected:", file.name);
+                getAccessToken().then(accessToken => {
+                    uploadFileToSalesforce(file, accessToken);
+                });
+            }
+        });
+    </script>
+</body>
 </html>
