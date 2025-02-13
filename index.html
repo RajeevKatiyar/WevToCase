@@ -93,8 +93,7 @@
         <label for="description">Description</label>
         <textarea name="description" required></textarea>
 
-        <input type="hidden">ContentdocumentId</label>
-        <input id="ContentdocumentId" maxlength="255" name="ContentdocumentId" size="20" type="text"  />
+         ContentdocumentId:<input  id="00NNS00000WnGqn" maxlength="255" name="00NNS00000WnGqn" size="20" type="text" /><br>
 
         <label for="fileInput">Upload File</label>
         <input type="file" id="fileInput" name="file" />
@@ -160,7 +159,7 @@
                         console.log("File uploaded successfully:", data);
                          const contentDocumentId = data.id; 
                         console.log('contentDocumentId--------------------------',contentDocumentId);
-                        document.getElementById('ContentdocumentId').value = contentDocumentId;
+                        document.getElementById('00NNS00000WnGqn').value = contentDocumentId;
                         
                     })
                     .catch(error => console.error("Error uploading file:", error));
