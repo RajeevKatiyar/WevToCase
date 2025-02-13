@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-to-Case with File Upload</title>
+</head>
+
+
+<body>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DNS000003BsRb" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="orgid" value="00DNS000003BsRb">
+        <input type="hidden" name="retURL" value="http://google.com">
+
+        <label for="name">Contact Name</label>
+        <input id="name" maxlength="80" name="name" size="20" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" size="20" type="email" required />
+
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" size="20" type="text" required />
+
+        <label for="subject">Subject</label>
+        <input id="subject" maxlength="80" name="subject" size="20" type="text" required />
+
+        <label for="description">Description</label>
+        <textarea name="description" required></textarea>
+
+        <label for="fileInput">Upload File</label>
+        <input type="file" id="fileInput" name="file" required />
+
+        <input type="hidden" id="external" name="external" value="1" />
+
+        <input type="submit" name="submit" value="Submit Case">
+    </form>
+
+</body>
+
+
+</html>
