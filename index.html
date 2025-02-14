@@ -6,76 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-to-Case with File Upload</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #74ebd5, #9face6);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        form {
-            max-width: 650px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #4a5568;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        input[type="file"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(90deg, #4CAF50, #45a049);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        input[type="submit"]:hover {
-            background: linear-gradient(90deg, #45a049, #4CAF50);
-            transform: scale(1.05);
-        }
-    </style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    form {
+        max-width: 650px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #4a5568;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="file"],
+    select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(90deg, #4CAF50, #45a049);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+        background: linear-gradient(90deg, #45a049, #4CAF50);
+        transform: scale(1.05);
+    }
+    
+    textarea {
+        height: 150px;
+        resize: vertical;
+    }
+    
+    input[type="file"] {
+        padding: 6px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"] {
+        margin-bottom: 15px;
+    }
+    #00Nbf000001GLr7 {
+        display: none;
+    }
+    
+    select {
+        margin-bottom: 15px;
+    }
+    
+    input[type="hidden"] {
+        display: none;
+    }
+</style>    
 </head>
+
 
 <body>
 
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DNS000003BsRb" method="POST"
-       >
-        <input type="hidden" name="orgid" value="00DNS000003BsRb">
-        <input type="hidden" name="retURL" value="https://rajeevkatiyar.github.io/ThankYouPage/">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+     <form action="https://saas-inspiration-2755--dev.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00Dbf0000027Doz" method="POST">
+    
+    <input type=hidden name="orgid" value="00Dbf0000027Doz">
+    <input type="hidden" name="retURL" value="https://rajeevkatiyar.github.io/ThankYouPage/">
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="aksharma@cloudsciencelabs.com">                                  -->
+    <!--  ----------------------------------------------------------------------  -->
 
         <label for="name">Contact Name</label>
         <input id="name" maxlength="80" name="name" size="20" type="text"  />
@@ -93,7 +137,28 @@
         <label for="description">Description</label>
         <textarea name="description" required></textarea>
 
-         ContentdocumentId:<input  id="00NNS00000WnGqn" maxlength="255" name="00NNS00000WnGqn" size="20" type="text" /><br>
+       ContentdocumentId:<input  id="00Nbf000001GLr7" maxlength="255" name="00Nbf000001GLr7" size="20" type="text" /><br>
+
+         
+    <label for="status">Status</label><select  id="status" name="status"><option value="">--None--</option><option value="On Hold">On Hold</option>
+    <option value="Escalated">Escalated</option>
+    <option value="Closed">Closed</option>
+    <option value="New">New</option>
+    </select><br>
+    
+    <label for="company">Company</label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
+    
+    <label for="type">Type</label><select  id="type" name="type"><option value="">--None--</option><option value="Problem">Problem</option>
+    <option value="Feature Request">Feature Request</option>
+    <option value="Question">Question</option>
+    </select><br>
+    
+    <label for="reason">Case Reason</label><select  id="reason" name="reason"><option value="">--None--</option><option value="User didn&#39;t attend training">User didn&#39;t attend training</option>
+    <option value="Complex functionality">Complex functionality</option>
+    <option value="Existing problem">Existing problem</option>
+    <option value="Instructions not clear">Instructions not clear</option>
+    <option value="New problem">New problem</option>
+    </select><br>
 
         <label for="fileInput">Upload File</label>
         <input type="file" id="fileInput" name="file" />
@@ -104,12 +169,12 @@
     </form>
 
     <script>
-        const tokenUrl = "https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/oauth2/token";
-        const clientId = "3MVG9VMBZCsTL9hkhg.jbfAPRpI7kiQgqkggzLhc6Vuz3Bfbl0quL9F_afeRig.xWTf9o3jGtf1i9xj0WvSHJ";
-        const clientSecret = "FF03DE3DC8900436BE8606EFFCFE8514292918E262560C9CF4B529407F144D17";
-        const username = "rajeev@cloudsciencelabs.com";
-        const password = "Agra@1234";
-        const securityToken = "eyxLEKqpiJ0ARASz1B5wpAoM";
+        const tokenUrl = "https://saas-inspiration-2755--dev.sandbox.my.salesforce.com//services/oauth2/token";
+        const clientId = "3MVG9HbBKF.OyqUfhGc_mmKgDGcg2wr._iLh.sFF8SsXfNbsf8lgPfFqjlHpQNKY03etaQWJJAuG_V4Fo1JCt";
+        const clientSecret = "67451A422D75C3663A054AB7E20686C325E3AD82490336D742DB6B0EA8D7E82C";
+        const username = "aksharma@cloudsciencelabs.com.mcp.dev";
+        const password = "Logmein@143";
+        const securityToken = "rz6e9PAERcjn111DAiEpcDlg";
 
         function getAccessToken() {
             console.log("Fetching Salesforce OAuth token...");
@@ -139,7 +204,7 @@
             fileReader.onload = function (event) {
                 const fileData = event.target.result.split(',')[1];
 
-                const uploadUrl = 'https://cloudsciencelabs-9d-dev-ed.develop.my.salesforce.com/services/data/v54.0/sobjects/ContentVersion/';
+                const uploadUrl = 'https://saas-inspiration-2755--dev.sandbox.my.salesforce.com/services/data/v54.0/sobjects/ContentVersion/';
                 const requestData = {
                     Title: file.name,
                     PathOnClient: file.name,
@@ -159,7 +224,7 @@
                         console.log("File uploaded successfully:", data);
                          const contentDocumentId = data.id; 
                         console.log('contentDocumentId--------------------------',contentDocumentId);
-                        document.getElementById('00NNS00000WnGqn').value = contentDocumentId;
+                        document.getElementById('00Nbf000001GLr7').value = contentDocumentId;
                         
                     })
                     .catch(error => console.error("Error uploading file:", error));
