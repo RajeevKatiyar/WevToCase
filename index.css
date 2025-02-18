@@ -1,1 +1,86 @@
-
+ <style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    form {
+        max-width: 650px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #4a5568;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="file"],
+    select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(90deg, #4CAF50, #45a049);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+        background: linear-gradient(90deg, #45a049, #4CAF50);
+        transform: scale(1.05);
+    }
+    
+    textarea {
+        height: 70px;
+        resize: vertical;
+    }
+    
+    input[type="file"] {
+        padding: 6px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"] {
+        margin-bottom: 15px;
+    }
+    #00Nbf000001GLr7 {
+        display: none;
+    }
+    
+    select {
+        margin-bottom: 15px;
+    }
+    
+    input[type="hidden"] {
+        display: none;
+    }
+</style>    
