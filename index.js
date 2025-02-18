@@ -73,7 +73,7 @@
 //     });
 
 
- <script>
+
         const tokenUrl = "https://saas-inspiration-2755--dev.sandbox.my.salesforce.com/services/oauth2/token";
         const clientId = "3MVG9HbBKF.OyqUfhGc_mmKgDGcg2wr._iLh.sFF8SsXfNbsf8lgPfFqjlHpQNKY03etaQWJJAuG_V4Fo1JCt";
         const clientSecret = "67451A422D75C3663A054AB7E20686C325E3AD82490336D742DB6B0EA8D7E82C";
@@ -146,4 +146,4 @@
                 });
             }
         });
-    </script>
+    
