@@ -1,77 +1,67 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-to-Case with File Upload</title>
-    <!-- Link to CSS file -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+       
+
 </head>
-<body>
 
-<!-- Form for Web-to-Case submission -->
-<form action="https://saas-inspiration-2755--dev.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00Dbf0000027Doz" method="POST">
-    <input type="hidden" name="orgid" value="00Dbf0000027Doz">
-    <input type="hidden" name="retURL" value="https://rajeevkatiyar.github.io/ThankYouPage/">
 
-    <!-- Form fields -->
-    <label for="name">Contact Name</label>
-    <input id="name" maxlength="80" name="name" size="20" type="text" />
 
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" size="20" type="email" />
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    <body>
+        <title>Web-to-Case with File Upload</title>
 
-    <label for="phone">Phone</label>
-    <input id="phone" maxlength="40" name="phone" size="20" type="text" />
-
-    <label for="subject">Subject</label>
-    <input id="subject" maxlength="80" name="subject" size="20" type="text" />
-
-    <label for="description">Description</label>
-    <textarea name="description" required></textarea>
-
-    <input id="00Nbf000001GLr7" maxlength="255" name="00Nbf000001GLr7" size="20" type="hidden" /><br>
-
-    <label for="status">Status</label>
-    <select id="status" name="status">
-        <option value="">--None--</option>
-        <option value="On Hold">On Hold</option>
-        <option value="Escalated">Escalated</option>
-        <option value="Closed">Closed</option>
-        <option value="New">New</option>
-    </select><br>
-
-    <label for="company">Company</label>
-    <input id="company" maxlength="80" name="company" size="20" type="text" /><br>
-
-    <label for="type">Type</label>
-    <select id="type" name="type">
-        <option value="">--None--</option>
-        <option value="Problem">Problem</option>
-        <option value="Feature Request">Feature Request</option>
-        <option value="Question">Question</option>
-    </select><br>
-
-    <label for="reason">Case Reason</label>
-    <select id="reason" name="reason">
-        <option value="">--None--</option>
-        <option value="User didn't attend training">User didn't attend training</option>
-        <option value="Complex functionality">Complex functionality</option>
-        <option value="Existing problem">Existing problem</option>
-        <option value="Instructions not clear">Instructions not clear</option>
-        <option value="New problem">New problem</option>
-    </select><br>
+    <form action="https://zedonk--zedonkdev.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DUA000002OUAH" method="POST">
+    
+    <input type=hidden name="orgid" value="00DUA000002OUAH">
+    <input type=hidden name="retURL" value="http://https://zedonk.co.uk/">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="udit@cloudsciencelabs.com">                                      -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="company">Company</label><input  id="company" maxlength="80" name="company" size="20" type="text" disabled/><br>
+    
+    Username:<input  id="00NR2000002d8xS" maxlength="50" name="00NR2000002d8xS" size="20" type="text" disabled/><br>
+    
+    Name:<input  id="00NUA000001Mvzx" maxlength="255" name="00NUA000001Mvzx" size="20" type="text" /><br>
+    
+    <label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+    
+    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="email" /><br>
+    
+    cc:<input  id="00NR20000033fYm" maxlength="80" name="00NR20000033fYm" size="20" type="text" /><br>
+    
+    <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+    
+    AI Conversation:<textarea id="00NUA000001Mw1Z" name="00NUA000001Mw1Z" rows="3" type="text" wrap="soft" disabled></textarea><br>
+    
+    <label for="description">Message</label><textarea name="description"></textarea><br>
+    <input  id="00NUA000001N4dX" maxlength="255" name="00NUA000001N4dX" size="20" type="text" type="hidden" /><br>
 
     <label for="fileInput">Upload File</label>
     <input type="file" id="fileInput" name="file" />
+    
 
-    <input type="hidden" id="external" name="external" value="1" />
-
-    <input type="submit" name="submit" value="Submit Case">
-</form>
-
-<!-- Link to JS file -->
-<script src="index.js"></script>
+    
+    <input type="submit" name="submit">
+    
+    </form>
+    <script src="Zedonk.js"></script>
 </body>
-</html>
 
+</html>
